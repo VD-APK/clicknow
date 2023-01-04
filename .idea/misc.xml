@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable-v24/back_ground_button_border.xml" value="0.1975" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable-v24/bg_spinner.xml" value="0.1975" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable-v24/button_border.xml" value="0.1975" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable-v24/calendar.xml" value="0.3155" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable-v24/chat.xml" value="0.3155" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable-v24/color_selector.xml" value="0.2505" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable-v24/edit_text_border.xml" value="0.196" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable-v24/home.xml" value="0.2505" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1975" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable-v24/ic_login_back.xml" value="0.1975" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable-v24/spinner_theme.xml" value="0.3155" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable-v24/yello_theme.xml" value="0.3155" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable/button_border_transparent.xml" value="0.3155" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable/ic_launcher_background.xml" value="0.193" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable/round_back_brown.xml" value="0.3155" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable/round_back_red_10.xml" value="0.2" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/drawable/text1.xml" value="0.3155" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/activity_admin_dash.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/activity_decide.xml" value="0.25" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/activity_emp_dashoard.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/activity_otpactivity.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/activity_register_decide.xml" value="0.15433946130825138" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/activity_scrolling_dashboard.xml" value="0.25" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/activity_signup.xml" value="0.22" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/activity_sigup_emp.xml" value="0.25" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/content_register_decide.xml" value="0.15348439504061565" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/content_scrolling.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/otp_dialog.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/text1.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/layout/text2.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/menu/menu.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.345" />
+        <entry key="..\:/Users/PK/AndroidStudioProjects/clicknow/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.345" />
+        <entry key="..\:/Users/PK/AppData/Local/Android/Sdk/platforms/android-32/data/res/drawable/btn_dropdown.xml" value="0.3155" />
+        <entry key="..\:/Users/PK/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/PK/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/PK/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.12312954253954682" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".com.example.wit.dashboard.AdminDashboard">
+
+
+        <LinearLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="46dp"
+            android:hint="Search Jobs"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/black"
+            android:textColorHint="#4C2D57"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="227dp"
+                android:layout_below="@id/etSearch"
+
+                android:layout_marginTop="56dp"
+
+                android:cacheColorHint="@color/black"
+                android:outlineAmbientShadowColor="@color/black"
+                android:outlineSpotShadowColor="@color/light_blue_600"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--                android:background="@drawable/button_border"-->
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/serviceName"
+                    style="@style/Widget.AppCompat.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+
+                    android:layout_marginTop="34dp"
+                    android:background="@drawable/edit_text_border"
+                    android:ems="10"
+                    android:hint="Add Service"
+                    android:inputType="textPersonName"
+                    android:textColor="#4C2D57"
+                    android:textColorHint="#4C2D57"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+                <Button
+                    android:id="@+id/addService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_border"
+                    android:text="Add"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/deleteText"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+
+                android:layout_marginTop="34dp"
+                android:background="@drawable/edit_text_border"
+                android:ems="10"
+                android:hint="Job Id"
+                android:inputType="phone"
+                android:textColor="#4C2D57"
+                android:textColorHint="#4C2D57"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:id="@+id/deleteService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+       android:layout_gravity="center"
+                    android:background="@drawable/button_border"
+                    android:text="Delete"
+
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+
+</RelativeLayout>
