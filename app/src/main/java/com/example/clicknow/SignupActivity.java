@@ -3,6 +3,7 @@ package com.example.clicknow;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Context;
@@ -21,6 +22,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.clicknow.com.example.wit.bean.LoginBean;
 import com.example.clicknow.com.example.wit.bean.UserBean;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,8 +36,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
+
+import java.util.Map;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+
 
 public class SignupActivity extends AppCompatActivity {
     EditText  mobileNumber,password, pinCod, name;
@@ -52,6 +65,7 @@ public class SignupActivity extends AppCompatActivity {
     private int selectedOtpPosition=0;
     private boolean resetEnabled=false;
     private String mobileNumberText;
+    String otp="";
 
 
     Button signUp ;
@@ -60,6 +74,8 @@ public class SignupActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -250,6 +266,7 @@ public class SignupActivity extends AppCompatActivity {
                         otp3.addTextChangedListener(textWatcher);
                         otp4.addTextChangedListener(textWatcher);
 
+                    otp=sendOTP(mobileNumber.getText().toString());
                         showKeyboard(otp1);
                         startCountDownTimer();
 
@@ -259,6 +276,7 @@ public class SignupActivity extends AppCompatActivity {
                             public void onClick(View v) {
                                 if(resetEnabled)
                                 {
+                                    otp=sendOTP(mobileNumber.getText().toString());
                                     startCountDownTimer();
                                 }
                             }
@@ -272,7 +290,7 @@ public class SignupActivity extends AppCompatActivity {
 
                                 if(getOtp.length()==4){
 
-                                    if(getOtp.equals("1234"))
+                                    if(getOtp.equals(otp))
                                     {
                                         databaseReference.child(Long.toString(mobileNo)).setValue(loginBean).addOnCompleteListener(new OnCompleteListener<Void>() {
 
@@ -334,6 +352,37 @@ public class SignupActivity extends AppCompatActivity {
             }
 
         });
+    }
+
+    private String sendOTP(String mobNumber) {
+        int randomPIN = (int)(Math.random()*9000)+1000;
+        String val = ""+randomPIN;
+
+
+        String url="http://sms.co3.live/api/smsapi?key=7d5c59941cf306bf6f37c308b43263f5&route=2&sender=WITORG&number="+mobNumber+"&templateid=1007178949079546167&sms=Dear Customer, " +val+" is your one time password. Please enter the OTP to proceed.Thank you,Team WIT";
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+       return val;
     }
 
 
