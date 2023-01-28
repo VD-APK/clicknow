@@ -24,6 +24,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.clicknow.com.example.wit.bean.Employee;
 import com.example.clicknow.com.example.wit.bean.LoginBean;
 import com.example.clicknow.com.example.wit.bean.PincodeBean;
@@ -58,7 +64,7 @@ public class EmpSignUp extends AppCompatActivity {
     private int resendTime=60;
     private int selectedOtpPosition=0;
     private boolean resetEnabled=false;
-
+    String otp="";
     boolean validatePhone(String input)
     {
 
@@ -382,13 +388,14 @@ public class EmpSignUp extends AppCompatActivity {
 
                     showKeyboard(otp1);
                     startCountDownTimer();
-
+                    otp=sendOTP(mobileNumber.getText().toString());
                     mobileNumberview.setText(mobileNumberText);
                     resendButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             if(resetEnabled)
                             {
+                                otp=sendOTP(mobileNumber.getText().toString());
                                 startCountDownTimer();
                             }
                         }
@@ -402,7 +409,7 @@ public class EmpSignUp extends AppCompatActivity {
 
                             if(getOtp.length()==4){
 
-                                if(getOtp.equals("1234"))
+                                if(getOtp.equals(otp))
                                 {
                                     databaseReference.child(Long.toString(mobileNo)).setValue(loginBean).addOnCompleteListener(new OnCompleteListener<Void>() {
 
@@ -563,6 +570,38 @@ public class EmpSignUp extends AppCompatActivity {
 
 
     };
+
+    private String sendOTP(String mobNumber) {
+        int randomPIN = (int)(Math.random()*9000)+1000;
+        String val = ""+randomPIN;
+
+
+        String url="http://sms.co3.live/api/smsapi?key=7d5c59941cf306bf6f37c308b43263f5&route=2&sender=WITORG&number="+mobNumber+"&templateid=1007178949079546167&sms=Dear Customer, " +val+" is your one time password. Please enter the OTP to proceed.Thank you,Team WIT";
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        System.out.println("success");
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println("failure");
+            }
+        });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+        queue.start();
+        return val;
+    }
 
     private void showKeyboard(EditText otp)
     {

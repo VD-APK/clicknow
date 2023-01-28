@@ -66,6 +66,7 @@ public class SignupActivity extends AppCompatActivity {
     private boolean resetEnabled=false;
     private String mobileNumberText;
     String otp="";
+    boolean flowFlag=true;
 
 
     Button signUp ;
@@ -209,8 +210,8 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                if (validateInput(mobileNumber.getText().toString(), password.getText().toString() ,name.getText().toString(),
-                       pinCod.getText().toString())) {
+                if (validateInput(mobileNumber.getText().toString(), password.getText().toString(), name.getText().toString(),
+                        pinCod.getText().toString())) {
 
                     mobileNo = Long.valueOf(mobileNumber.getText().toString());
                     pinCode = Integer.parseInt(pinCod.getText().toString());
@@ -234,18 +235,20 @@ public class SignupActivity extends AppCompatActivity {
                                     DataSnapshot snapshot = task.getResult();
                                     LoginBean bean = snapshot.getValue(LoginBean.class);
                                     if (bean.getMobileNumber() == loginBean.getMobileNumber()) {
+
                                         Toast.makeText(getApplicationContext(), "User already exist", Toast.LENGTH_SHORT).show();
                                         Intent myIntent = new Intent(SignupActivity.this, MainActivity.class);
                                         SignupActivity.this.startActivity(myIntent);
-
+                                        flowFlag = false;
                                     }
                                 }
                             }
                         }
                     });
 
-                        AlertDialog.Builder mBuilder= new AlertDialog.Builder(SignupActivity.this);
-                        View view=getLayoutInflater().inflate(R.layout.otp_dialog,null);
+                    if (flowFlag) {
+                        AlertDialog.Builder mBuilder = new AlertDialog.Builder(SignupActivity.this);
+                        View view = getLayoutInflater().inflate(R.layout.otp_dialog, null);
                         mBuilder.setView(view);
 
                         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
@@ -257,8 +260,8 @@ public class SignupActivity extends AppCompatActivity {
                         otp2 = findViewById(R.id.otp2);
                         otp3 = findViewById(R.id.otp3);
                         otp4 = findViewById(R.id.otp4);
-                        resendButton= findViewById(R.id.resedOtp);
-                        mobileNumberview =findViewById(R.id.mobileNumberText);
+                        resendButton = findViewById(R.id.resedOtp);
+                        mobileNumberview = findViewById(R.id.mobileNumberText);
                         verifyButton = findViewById(R.id.verifyBtn);
 
                         otp1.addTextChangedListener(textWatcher);
@@ -266,17 +269,16 @@ public class SignupActivity extends AppCompatActivity {
                         otp3.addTextChangedListener(textWatcher);
                         otp4.addTextChangedListener(textWatcher);
 
-                    otp=sendOTP(mobileNumber.getText().toString());
+                        otp = sendOTP(mobileNumber.getText().toString());
                         showKeyboard(otp1);
                         startCountDownTimer();
 
-                        mobileNumberview.setText(mobileNumberText);
+                        mobileNumberview.setText(mobileNumber.getText().toString());
                         resendButton.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                if(resetEnabled)
-                                {
-                                    otp=sendOTP(mobileNumber.getText().toString());
+                                if (resetEnabled) {
+                                    otp = sendOTP(mobileNumber.getText().toString());
                                     startCountDownTimer();
                                 }
                             }
@@ -286,12 +288,11 @@ public class SignupActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
 
-                                final  String getOtp=otp1.getText().toString()+otp2.getText().toString()+otp3.getText().toString()+otp4.getText().toString();
+                                final String getOtp = otp1.getText().toString() + otp2.getText().toString() + otp3.getText().toString() + otp4.getText().toString();
 
-                                if(getOtp.length()==4){
+                                if (getOtp.length() == 4) {
 
-                                    if(getOtp.equals(otp))
-                                    {
+                                    if (getOtp.equals(otp)) {
                                         databaseReference.child(Long.toString(mobileNo)).setValue(loginBean).addOnCompleteListener(new OnCompleteListener<Void>() {
 
                                             @Override
@@ -329,8 +330,7 @@ public class SignupActivity extends AppCompatActivity {
                                         });
                                         finish();
 
-                                    }
-                                    else{
+                                    } else {
                                         Toast.makeText(getApplicationContext(), "wrong otp", Toast.LENGTH_SHORT).show();
                                     }
 
@@ -341,14 +341,10 @@ public class SignupActivity extends AppCompatActivity {
                         });
 
 
-
-
-
+                    }
 
 
                 }
-
-
             }
 
         });
@@ -382,6 +378,7 @@ public class SignupActivity extends AppCompatActivity {
 
 // Add the request to the RequestQueue.
         queue.add(stringRequest);
+        queue.start();
        return val;
     }
 
