@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.clicknow">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClickNow"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ResetPassword"
+            android:exported="false"
+            android:label="@string/title_activity_reset_password"
+            android:theme="@style/Theme.ClickNow.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".ScrollingDashboard"
             android:exported="false"
@@ -49,12 +62,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-
-
 
 </manifest>

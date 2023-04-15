@@ -48,33 +48,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-<!--
-        <EditText
-            android:id="@+id/deleteJobId"
-            style="@style/Widget.AppCompat.EditText"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
 
-            android:layout_marginTop="34dp"
-            android:background="@drawable/edit_text_border"
-            android:ems="10"
-            android:hint="Job Id"
-            android:inputType="phone"
-            android:textColor="#4C2D57"
-            android:textColorHint="#4C2D57"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <Button
-            android:id="@+id/deleteJobButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+<!--        <EditText-->
+<!--            android:id="@+id/deleteJobId"-->
+<!--            style="@style/Widget.AppCompat.EditText"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="51dp"-->
+
+<!--            android:layout_marginTop="34dp"-->
+<!--            android:background="@drawable/edit_text_border"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Job Id"-->
+<!--            android:inputType="phone"-->
+<!--            android:textColor="#4C2D57"-->
+<!--            android:textColorHint="#4C2D57"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+<!--        <Button-->
+<!--            android:id="@+id/deleteJobButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
 
 
-            android:layout_gravity="center"
-            android:background="@drawable/button_border"
-            android:text="Delete"
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@drawable/button_border"-->
+<!--            android:text="Delete"-->
 
-            android:textColor="@color/white" />
-            -->
+<!--            android:textColor="@color/white" />-->
+
     </LinearLayout>
 </RelativeLayout>
