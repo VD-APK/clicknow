@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Parcelable;
 import android.text.Editable;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -43,6 +44,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -160,7 +162,8 @@ public class MainActivity extends AppCompatActivity {
                                                         public void onClick(View v) {
                                                             Intent myIntent = new Intent(MainActivity.this, ResetPassword.class);
 
-                                                            myIntent.putExtra("userName",mobileNumber);
+//                                                            LoginBean loginBean= new LoginBean();
+                                                            myIntent.putExtra("LoginBean", (Serializable) bean);
                                                             MainActivity.this.startActivity(myIntent);
                                                         }
 
@@ -232,10 +235,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         logIn.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
-
             public void onClick(View v) {
                 firebaseDatabase = FirebaseDatabase.getInstance();
                 userName = findViewById(R.id.userName);

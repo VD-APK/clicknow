@@ -1,6 +1,8 @@
 package com.example.clicknow.com.example.wit.bean;
 
-public class LoginBean {
+import java.io.Serializable;
+
+public class LoginBean implements Serializable {
 
 
     private long mobileNumber;

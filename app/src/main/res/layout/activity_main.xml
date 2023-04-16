@@ -62,6 +62,8 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#3F51B5"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -71,13 +73,17 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
+
                     android:inputType="textPassword"
                     android:layout_width="match_parent"
                     android:textColor="#3F51B5"
                     android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/password_right"
+
+
 
                     android:fontFamily="@font/poppinsmedium" />
+
+
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
