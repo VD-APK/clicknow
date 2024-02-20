@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.clicknow">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -17,6 +19,54 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClickNow"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".MyCurrentLocation"
+            android:exported="false"
+            android:label="@string/title_activity_user_dash_board"
+            android:theme="@style/Theme.ClickNow.NoActionBar" />
+        <activity
+            android:name=".HomeRepair"
+            android:exported="false" />
+        <activity
+            android:name=".PlumberandCarpenter"
+            android:exported="false" />
+        <activity
+            android:name=".AppliancesRepair"
+            android:exported="false" />
+        <activity
+            android:name=".Electrician"
+            android:exported="false" />
+        <activity
+            android:name=".BathroomCleaning"
+            android:exported="false" />
+        <activity
+            android:name=".PestControl"
+            android:exported="false" />
+        <activity
+            android:name=".Painting"
+            android:exported="false" />
+        <activity
+            android:name=".HomeCleaning"
+            android:exported="false" />
+        <activity
+            android:name=".CarMechanic"
+            android:exported="false" />
+        <activity
+            android:name=".BikeMechanic"
+            android:exported="false" />
+        <activity
+            android:name=".AcMechanic"
+            android:exported="false" />
+        <activity
+            android:name=".SaloonActivity"
+            android:exported="false"
+            android:label="@string/title_activity_saloon"
+            android:theme="@style/Theme.ClickNow" />
+        <activity
+            android:name=".UserDashBoard"
+            android:exported="false"
+            android:label="@string/title_activity_user_dash_board"
+            android:theme="@style/Theme.ClickNow.NoActionBar" />
         <activity
             android:name=".ResetPassword"
             android:exported="false"

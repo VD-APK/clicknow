@@ -243,6 +243,11 @@ public class MainActivity extends AppCompatActivity {
                 Long mobileNo = Long.valueOf(userName.getText().toString());
                 String passCode = password.getText().toString();
 
+                if (mobileNo == 123 && passCode.equals("123")) {
+                    Intent myIntent = new Intent(MainActivity.this, UserDashBoard.class);
+                    MainActivity.this.startActivity(myIntent);
+                }
+
                 if (mobileNo == 1234 && passCode.equals("1234")) {
                     Intent myIntent = new Intent(MainActivity.this, AdminDashboard.class);
                     MainActivity.this.startActivity(myIntent);

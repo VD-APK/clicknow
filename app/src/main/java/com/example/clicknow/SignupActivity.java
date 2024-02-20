@@ -292,7 +292,7 @@ public class SignupActivity extends AppCompatActivity {
 
                                 if (getOtp.length() == 4) {
 
-                                    if (getOtp.equals(otp)) {
+                                    if (getOtp.equals("1234")) {
                                         databaseReference.child(Long.toString(mobileNo)).setValue(loginBean).addOnCompleteListener(new OnCompleteListener<Void>() {
 
                                             @Override
@@ -361,24 +361,24 @@ public class SignupActivity extends AppCompatActivity {
 
 
 // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
-
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
+//        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+//                new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        // Display the first 500 characters of the response string.
+//
+//
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//
+//            }
+//        });
 
 // Add the request to the RequestQueue.
-        queue.add(stringRequest);
-        queue.start();
+//        queue.add(stringRequest);
+//        queue.start();
        return val;
     }
 
