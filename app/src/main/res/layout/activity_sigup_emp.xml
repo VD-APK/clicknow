@@ -115,30 +115,53 @@
       </com.google.android.material.textfield.TextInputLayout>
 
 
-      <com.google.android.material.textfield.TextInputLayout
+
+      <TableRow
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginLeft="10dp"
           android:layout_marginTop="10dp"
           android:layout_marginRight="10dp"
-          android:hint="Pincode"
-          android:textColorHint="#3F51B5"
-          app:counterOverflowTextColor="@color/black"
+          android:orientation="horizontal">
 
 
-          app:helperTextTextColor="@color/black"
-
-          app:placeholderTextColor="@color/black">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/empPinCode"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/username_right"
-            android:fontFamily="@font/poppinsmedium"
-            android:inputType="phone"
-            android:textColor="#3F51B5" />
-      </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="5dp"
+            android:hint="Address"
+            android:textColorHint="#3F51B5"
+            app:counterOverflowTextColor="@color/black"
+
+
+            app:helperTextTextColor="@color/black"
+
+            app:placeholderTextColor="@color/black">
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/empPinCode"
+              android:layout_width="350dp"
+              android:layout_height="wrap_content"
+
+
+              android:fontFamily="@font/poppinsmedium"
+              android:textColor="#3F51B5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+
+            android:id="@+id/gpsLogo"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+
+            android:src="@drawable/gpslogo" />
+
+      </TableRow>
 
 
       <com.google.android.material.textfield.TextInputLayout
@@ -174,7 +197,7 @@
 
           android:id="@+id/serviceSpinner"
           android:layout_width="match_parent"
-          android:layout_height="36dp"
+          android:layout_height="48dp"
           android:layout_centerHorizontal="true"
           android:layout_centerVertical="true"
           android:layout_marginLeft="10dp"

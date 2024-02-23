@@ -272,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
                                      //   Toast.makeText(getApplicationContext(), "Login  Successful", Toast.LENGTH_SHORT).show();
                                         if(!bean.isEmp())
                                         {
-                                            Intent myIntent = new Intent(MainActivity.this, Dashboard.class);
+                                            Intent myIntent = new Intent(MainActivity.this, UserDashBoard.class);
                                             myIntent.putExtra("userName",mobileNo);
                                             MainActivity.this.startActivity(myIntent);
 
